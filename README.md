@@ -1,7 +1,7 @@
 # wefwec
 Windows event forwarding tips and tricks
 
-# tips for windows 2016 -> servers
+# Tips for windows 2016 -> servers
 
 ```
 netsh http delete urlacl url=http://+:5985/wsman/
@@ -11,13 +11,13 @@ netsh http add urlacl url=https://+:5986/wsman/ sddl=D:(A;;GX;;;S-1-5-80-5692565
 ```
 
 
-# configuration (GPO)
+# Configuration (GPO)
 ```
 Server=http://fqdn:5985/wsman/SubscriptionManager/WEC,Refresh=60
 ```
 
 
-# limits (snips from the documentation)
+# Limits (snips from the documentation)
 
 - 2000 - 4000 clients, with 1 to 2 subscriptions
 - ~16 gigs ram
@@ -25,7 +25,7 @@ Server=http://fqdn:5985/wsman/SubscriptionManager/WEC,Refresh=60
 - fast disks
 - alot of disk
 
-## configuration parameters
+## Configuration parameters
 
 Three parameters control the frequency of the client connections:
 
