@@ -13,8 +13,26 @@ netsh http add urlacl url=https://+:5986/wsman/ sddl=D:(A;;GX;;;S-1-5-80-5692565
 
 # configuration (GPO)
 ```
-Server=http://2016wef.jve5dtest.com:5985/wsman/SubscriptionManager/WEC,Refresh=60
+Server=http://fqdn:5985/wsman/SubscriptionManager/WEC,Refresh=60
 ```
+
+
+# limits (snips from the documentation)
+
+- 2000 - 4000 clients, with 1 to 2 subscriptions
+- ~16 gigs ram
+- ~4 cpu
+- fast disks
+- alot of disk
+
+## configuration parameters
+
+Three parameters control the frequency of the client connections:
+
+- Refresh= (specified in the configuration URL of the GPO)
+- DeliveryMaxLatency (specified in the subscription)
+- HeartbeatInterval (specified in the subscription)
+
 
 # Links for reference
 
