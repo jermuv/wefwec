@@ -115,6 +115,40 @@ C:\Users\administrator>
 
 ```
 
+C:\Users\administrator>wecutil ss SECURITYLOGS /cf:events
+
+C:\Users\administrator>wecutil gs SECURITYLOGS
+Subscription Id: SECURITYLOGS
+SubscriptionType: SourceInitiated
+Description:
+Enabled: true
+Uri: http://schemas.microsoft.com/wbem/wsman/1/windows/EventLog
+ConfigurationMode: MinLatency
+DeliveryMode: Push
+DeliveryMaxLatencyTime: 30000
+HeartbeatInterval: 3600000
+Query: <QueryList><Query Id="0" Path="Microsoft-Windows-Sysmon/Operational"><Select Path="Microsoft-Windows-Sysmon/Operational">*</Select></Query></QueryList>
+ReadExistingEvents: true
+TransportName: HTTP
+ContentFormat: Events
+Locale: fi-FI
+LogFile: ForwardedEvents
+PublisherName: Microsoft-Windows-EventCollector
+AllowedIssuerCAList:
+AllowedSubjectList:
+DeniedSubjectList:
+AllowedSourceDomainComputers: O:NSG:BAD:P(A;;GA;;;DC)S:
+
+EventSource[0]:
+        Address: wsus19.JVE5DTEST.COM
+        Enabled: true
+
+C:\Users\administrator>
+```
+
+
+
+
 ## Client
 
 - ping server (fqdn)
@@ -163,3 +197,4 @@ The HTTPS option is available if certificate based authentication is used, in ca
 - https://learn.microsoft.com/en-us/archive/blogs/technet/mspfe/setting-up-security-event-log-subscriptions-with-windows-server-20032008
 - https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance
 - https://learn.microsoft.com/en-us/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection
+- https://www.itprotoday.com/strategy/q-windows-event-forwarding-and-collection-how-can-we-limit-processing-impact-source-and
