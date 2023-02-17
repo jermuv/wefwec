@@ -72,6 +72,26 @@ ListeningOn = 127.0.0.1, 192.168.1.1, ::1, fe80::100:7f:fffe%14, fe80::5efe:192.
 - test ports 5985, 5986
   - Test-NetConnection <computername> -port 5985 -InformationLevel "detailed"
 
+```
+PS C:\Users\administrator> Test-NetConnection 2016wef -port 5985 -InformationLevel "detailed"
+
+
+ComputerName            : 2016wef
+RemoteAddress           : 192.168.190.54
+RemotePort              : 5985
+NameResolutionResults   : 192.168.190.54
+MatchingIPsecRules      :
+NetworkIsolationContext : Private Network
+InterfaceAlias          : Ethernet
+SourceAddress           : 192.168.190.51
+NetRoute (NextHop)      : 0.0.0.0
+TcpTestSucceeded        : True
+
+
+
+PS C:\Users\administrator>
+```
+
 # Links for reference
 
 - https://learn.microsoft.com/en-us/troubleshoot/windows-server/admin-development/events-not-forwarded-by-windows-server-collector
