@@ -133,9 +133,24 @@ TcpTestSucceeded        : True
 PS C:\Users\administrator>
 ```
 
+# Encryption
+
+This is taken from the documentation, https://learn.microsoft.com/en-us/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection
+
+```
+Are WEF events encrypted? I see an HTTP/HTTPS option!
+In a domain setting, the connection used to transmit WEF events is encrypted using Kerberos, by default (with NTLM as a fallback option, which can be disabled by using a GPO). Only the WEF collector can decrypt the connection. Additionally, the connection between WEF client and WEC server is mutually authenticated regardless of authentication type (Kerberos or NTLM.) There are GPO options to force Authentication to use Kerberos Only.
+
+This authentication and encryption is performed regardless if HTTP or HTTPS is selected.
+
+The HTTPS option is available if certificate based authentication is used, in cases where the Kerberos based mutual authentication isn't an option. The SSL certificate and provisioned client certificates are used to provide mutual authentication.
+```
+
+
 # Links for reference
 
 - https://learn.microsoft.com/en-us/troubleshoot/windows-server/admin-development/events-not-forwarded-by-windows-server-collector
 - https://learn.microsoft.com/en-us/troubleshoot/windows-server/admin-development/configure-eventlog-forwarding-performance?source=recommendations
 - https://learn.microsoft.com/en-us/archive/blogs/technet/mspfe/setting-up-security-event-log-subscriptions-with-windows-server-20032008
 - https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/troubleshoot-tcp-ip-communication-guidance
+- https://learn.microsoft.com/en-us/windows/security/threat-protection/use-windows-event-forwarding-to-assist-in-intrusion-detection
