@@ -13,6 +13,7 @@ netsh http add urlacl url=https://+:5986/wsman/ sddl=D:(A;;GX;;;S-1-5-80-5692565
 # Firewall
 
 | protocol | port |
+| --- | ---- |
 | tcp | 5985 |
 | tcp | 5986 |
 
