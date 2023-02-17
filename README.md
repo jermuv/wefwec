@@ -40,6 +40,14 @@ Three parameters control the frequency of the client connections:
 - DeliveryMaxLatency (specified in the subscription)
 - HeartbeatInterval (specified in the subscription)
 
+## Subscription configuration options
+| Event delivery optimization options | Description |
+| ----------------------------------- | ----------- |
+| Normal | This option ensures reliable delivery of events and doesn't attempt to conserve bandwidth. It's the appropriate choice unless you need tighter control over bandwidth usage or need forwarded events delivered as quickly as possible. It uses pull delivery mode, batches 5 items at a time and sets a batch timeout of 15 minutes. |
+| Minimize bandwidth | This option ensures that the use of network bandwidth for event delivery is strictly controlled. It's an appropriate choice if you want to limit the frequency of network connections made to deliver events. It uses push delivery mode and sets a batch timeout of 6 hours. In addition, it uses a heartbeat interval of 6 hours.
+| Minimize latency | This option ensures that events are delivered with minimal delay. It's an appropriate choice if you're collecting alerts or critical events. It uses push delivery mode and sets a batch timeout of 30 seconds. |
+
+
 # Tips for tunkkaus
 
 ## Server
@@ -133,11 +141,6 @@ TcpTestSucceeded        : True
 PS C:\Users\administrator>
 ```
 
-| Event delivery optimization options | Description |
-| ----------------------------------- | ----------- |
-| Normal | This option ensures reliable delivery of events and doesn't attempt to conserve bandwidth. It's the appropriate choice unless you need tighter control over bandwidth usage or need forwarded events delivered as quickly as possible. It uses pull delivery mode, batches 5 items at a time and sets a batch timeout of 15 minutes. |
-| Minimize bandwidth | This option ensures that the use of network bandwidth for event delivery is strictly controlled. It's an appropriate choice if you want to limit the frequency of network connections made to deliver events. It uses push delivery mode and sets a batch timeout of 6 hours. In addition, it uses a heartbeat interval of 6 hours.
-| Minimize latency | This option ensures that events are delivered with minimal delay. It's an appropriate choice if you're collecting alerts or critical events. It uses push delivery mode and sets a batch timeout of 30 seconds. |
 
 # Encryption
 
