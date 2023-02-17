@@ -45,6 +45,10 @@ Three parameters control the frequency of the client connections:
 ## Server
 - Confirm the Windows Remote Management listener is configured for port 5985:
   - WinRM e winrm/config/listener
+- Check configuration via command line tool
+  - wecutil es
+  - wecutil gs -?
+
 
 ```
 Listener
@@ -64,6 +68,43 @@ URLPrefix = wsman
 CertificateThumbprint
 
 ListeningOn = 127.0.0.1, 192.168.1.1, ::1, fe80::100:7f:fffe%14, fe80::5efe:192.168.1.1%12, fe80::88f7:5cef:3a9c:8f78%11
+```
+
+```
+C:\Users\administrator>wecutil es
+OIKEASECURITYLOGS
+SECURITYLOGS
+
+......
+
+C:\Users\administrator>wecutil gs SECURITYLOGS
+Subscription Id: SECURITYLOGS
+SubscriptionType: SourceInitiated
+Description:
+Enabled: true
+Uri: http://schemas.microsoft.com/wbem/wsman/1/windows/EventLog
+ConfigurationMode: MinLatency
+DeliveryMode: Push
+DeliveryMaxLatencyTime: 30000
+HeartbeatInterval: 3600000
+Query: <QueryList><Query Id="0" Path="Microsoft-Windows-Sysmon/Operational"><Select Path="Microsoft-Windows-Sysmon/Operational">*</Select></Query></QueryList>
+ReadExistingEvents: true
+TransportName: HTTP
+ContentFormat: RenderedText
+Locale: fi-FI
+LogFile: ForwardedEvents
+PublisherName: Microsoft-Windows-EventCollector
+AllowedIssuerCAList:
+AllowedSubjectList:
+DeniedSubjectList:
+AllowedSourceDomainComputers: O:NSG:BAD:P(A;;GA;;;DC)S:
+
+EventSource[0]:
+        Address: wsus19.JVE5DTEST.COM
+        Enabled: true
+
+C:\Users\administrator>
+
 ```
 
 ## Client
