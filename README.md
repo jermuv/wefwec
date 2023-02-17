@@ -112,9 +112,9 @@ EventSource[0]:
         Enabled: true
 
 C:\Users\administrator>
-
 ```
 
+```
 C:\Users\administrator>wecutil ss SECURITYLOGS /cf:events
 
 C:\Users\administrator>wecutil gs SECURITYLOGS
