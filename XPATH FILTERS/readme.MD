@@ -7,3 +7,5 @@ Filename is indicating to where these xpath filterings are intended to be used
   - DCR - Azure monitoring DCR XPath rule
 
 Other file prefixes are just tests, you can try those but might be it is not working
+
+Note, you can potentially take some "custom view" xpath and copy/paste it to DCR and it might work just fine
