@@ -1,2 +1,8 @@
-*
-blaa
+# XPath Filtering tips
+
+Filename is indicating to where these xpath filterings are intended to be used
+- file starting with
+  - Customview - Event Viewer custom views
+  - Subscription - Windows Event Forwarding subscription filter
+
+Other file prefixes are just tests, you can try those but might be it is not working
