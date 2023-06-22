@@ -14,3 +14,10 @@ Reminder:
 Good amount of the **events** and **audit policies** can be found from here:
 - [Securing AD - Events to monitor](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor)
 - [Spreadsheet details the security audit events](https://www.microsoft.com/en-us/download/details.aspx?id=50034)
+
+External references
+- [Blog, backslasher](https://blog.backslasher.net/filtering-windows-event-log-using-xpath.html)
+- [Blog, petri](https://petri.com/query-xml-event-log-data-using-xpath-in-windows-server-2012-r2/)
+
+Other links:
+- [File share](https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4663)
